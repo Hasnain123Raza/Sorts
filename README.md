@@ -9,3 +9,8 @@ Sorts is a project in the C programming language that attempts to capture the mo
 The project builds and installs a static library and its header that contains all of the sorting algorithms currently implemented. To build the program navigate to the root directory and run `mkdir build && cd build` to create a build directory and go into it. After that run `../configure` to run autotools configurations. This will generate a Makefile in the build directory that you can use you build or install the project.
 
 Run `make` to make the project. This should generate the `libsorts.a` file in your build directory if everything goes right (there will be a lot of other files and directories too). To install, run `make install` and to uninstall run `make uninstall`. After installation, you can use this library in your own C programs by doing `#include <sorts.h>`.
+
+## Links
+
+Doxygen: https://hasnain123raza.github.io/Sorts/
+Github: https://github.com/Hasnain123Raza/Sorts
