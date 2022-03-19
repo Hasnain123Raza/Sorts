@@ -1,0 +1,13 @@
+include_HEADERS = include/sorts.h
+
+lib_LIBRARIES = libsorts.a
+libsorts_a_CPPFLAGS = -I$(top_srcdir)/include
+libsorts_a_SOURCES = src/bubble.c
+
+noinst_PROGRAMS = tests/driver
+tests_driver_SOURCES = tests/driver.c tests/bubble.sh
+tests_driver_CPPFLAGS = -I$(top_srcdir)/include
+tests_driver_LDADD = libsorts.a
+
+AM_TESTS_ENVIRONMENT = DRIVER=tests/driver; export DRIVER;
+TESTS = tests/bubble.sh

@@ -1,0 +1,20 @@
+name: Tests Action
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v2
+
+      - name: Prepare build
+        run: mkdir build && cd build && ../configure
+
+      - name: Run tests
+        run: make check && make distcheck
