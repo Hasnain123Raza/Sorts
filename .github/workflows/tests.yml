@@ -17,4 +17,4 @@ jobs:
         run: mkdir build && cd build && ../configure
 
       - name: Run tests
-        run: make check && make distcheck
+        run: cd build && make check && make distcheck
