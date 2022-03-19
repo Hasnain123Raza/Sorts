@@ -15,6 +15,8 @@ jobs:
       
       - name: Generate docs
         uses: mattnotmitt/doxygen-action@v1.9.2
+
+      - name: Rename directory
         run: mv docs/html docs/docs
       
       - name: Deploy docs
