@@ -69,4 +69,21 @@ void bubble_sort(void *base, size_t nitems, size_t size, compare_func cmp);
  */
 void insertion_sort(void *base, size_t nitems, size_t size, compare_func cmp);
 
+/**
+ * @brief Sorts an array using the selection sort algorithm.
+ * 
+ * Selection sort is a simple sorting algorithm that works by taking
+ * an unsorted array and repeatedly finding the minimum element and
+ * swapping it with the first element.
+ * 
+ * Selection sort has a time complexity of O(n^2) and a space complexity
+ * of O(1).
+ * 
+ * @param base Pointer to the first element of the array. 
+ * @param nitems Number of elements in the array.
+ * @param size Size of each element in the array.
+ * @param cmp Comparator function to be used in the sorting algorithm.
+ */
+void selection_sort(void *base, size_t nitems, size_t size, compare_func cmp);
+
 #endif

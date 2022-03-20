@@ -141,7 +141,8 @@ libsorts_a_AR = $(AR) $(ARFLAGS)
 libsorts_a_LIBADD =
 am__dirstamp = $(am__leading_dot)dirstamp
 am_libsorts_a_OBJECTS = src/libsorts_a-bubble.$(OBJEXT) \
-	src/libsorts_a-insertion.$(OBJEXT)
+	src/libsorts_a-insertion.$(OBJEXT) \
+	src/libsorts_a-selection.$(OBJEXT)
 libsorts_a_OBJECTS = $(am_libsorts_a_OBJECTS)
 am_tests_driver_OBJECTS = tests/driver-driver.$(OBJEXT)
 tests_driver_OBJECTS = $(am_tests_driver_OBJECTS)
@@ -163,6 +164,7 @@ depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = src/$(DEPDIR)/libsorts_a-bubble.Po \
 	src/$(DEPDIR)/libsorts_a-insertion.Po \
+	src/$(DEPDIR)/libsorts_a-selection.Po \
 	tests/$(DEPDIR)/driver-driver.Po
 am__mv = mv -f
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -504,17 +506,20 @@ include_HEADERS = include/sorts.h
 lib_LIBRARIES = libsorts.a
 libsorts_a_CPPFLAGS = -I$(top_srcdir)/include
 libsorts_a_SOURCES = src/bubble.c \
-    src/insertion.c
+    src/insertion.c \
+    src/selection.c
 
 tests_driver_SOURCES = tests/driver.c \
     tests/bubble.sh \
-    tests/insertion.sh
+    tests/insertion.sh \
+    tests/selection.sh
 
 tests_driver_CPPFLAGS = -I$(top_srcdir)/include
 tests_driver_LDADD = libsorts.a
 AM_TESTS_ENVIRONMENT = DRIVER=tests/driver; export DRIVER;
 TESTS = tests/bubble.sh \
-    tests/insertion.sh
+    tests/insertion.sh \
+    tests/selection.sh
 
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
@@ -613,6 +618,8 @@ src/libsorts_a-bubble.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/libsorts_a-insertion.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/libsorts_a-selection.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 
 libsorts.a: $(libsorts_a_OBJECTS) $(libsorts_a_DEPENDENCIES) $(EXTRA_libsorts_a_DEPENDENCIES) 
 	$(AM_V_at)-rm -f libsorts.a
@@ -641,6 +648,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libsorts_a-bubble.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libsorts_a-insertion.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libsorts_a-selection.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/driver-driver.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
@@ -692,6 +700,20 @@ src/libsorts_a-insertion.obj: src/insertion.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/insertion.c' object='src/libsorts_a-insertion.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsorts_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libsorts_a-insertion.obj `if test -f 'src/insertion.c'; then $(CYGPATH_W) 'src/insertion.c'; else $(CYGPATH_W) '$(srcdir)/src/insertion.c'; fi`
+
+src/libsorts_a-selection.o: src/selection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsorts_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libsorts_a-selection.o -MD -MP -MF src/$(DEPDIR)/libsorts_a-selection.Tpo -c -o src/libsorts_a-selection.o `test -f 'src/selection.c' || echo '$(srcdir)/'`src/selection.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libsorts_a-selection.Tpo src/$(DEPDIR)/libsorts_a-selection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/selection.c' object='src/libsorts_a-selection.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsorts_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libsorts_a-selection.o `test -f 'src/selection.c' || echo '$(srcdir)/'`src/selection.c
+
+src/libsorts_a-selection.obj: src/selection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsorts_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libsorts_a-selection.obj -MD -MP -MF src/$(DEPDIR)/libsorts_a-selection.Tpo -c -o src/libsorts_a-selection.obj `if test -f 'src/selection.c'; then $(CYGPATH_W) 'src/selection.c'; else $(CYGPATH_W) '$(srcdir)/src/selection.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libsorts_a-selection.Tpo src/$(DEPDIR)/libsorts_a-selection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/selection.c' object='src/libsorts_a-selection.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsorts_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libsorts_a-selection.obj `if test -f 'src/selection.c'; then $(CYGPATH_W) 'src/selection.c'; else $(CYGPATH_W) '$(srcdir)/src/selection.c'; fi`
 
 tests/driver-driver.o: tests/driver.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(tests_driver_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT tests/driver-driver.o -MD -MP -MF tests/$(DEPDIR)/driver-driver.Tpo -c -o tests/driver-driver.o `test -f 'tests/driver.c' || echo '$(srcdir)/'`tests/driver.c
@@ -942,6 +964,13 @@ tests/insertion.sh.log: tests/insertion.sh
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+tests/selection.sh.log: tests/selection.sh
+	@p='tests/selection.sh'; \
+	b='tests/selection.sh'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 .test.log:
 	@p='$<'; \
 	$(am__set_b); \
@@ -1177,6 +1206,7 @@ distclean: distclean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 		-rm -f src/$(DEPDIR)/libsorts_a-bubble.Po
 	-rm -f src/$(DEPDIR)/libsorts_a-insertion.Po
+	-rm -f src/$(DEPDIR)/libsorts_a-selection.Po
 	-rm -f tests/$(DEPDIR)/driver-driver.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
@@ -1227,6 +1257,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -rf $(top_srcdir)/autom4te.cache
 		-rm -f src/$(DEPDIR)/libsorts_a-bubble.Po
 	-rm -f src/$(DEPDIR)/libsorts_a-insertion.Po
+	-rm -f src/$(DEPDIR)/libsorts_a-selection.Po
 	-rm -f tests/$(DEPDIR)/driver-driver.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
