@@ -40,6 +40,8 @@ int main(int argc, char *argv[]) {
         sort = insertion_sort;
     } else if (strcmp(sort_algo, "selection") == 0) {
         sort = selection_sort;
+    } else if (strcmp(sort_algo, "exchange") == 0) {
+        sort = exchange_sort;
     } else {
         printf("Unknown sort algorithm: %s\n", sort_algo);
         exit(1);

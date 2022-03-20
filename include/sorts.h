@@ -74,7 +74,7 @@ void insertion_sort(void *base, size_t nitems, size_t size, compare_func cmp);
  * 
  * Selection sort is a simple sorting algorithm that works by taking
  * an unsorted array and repeatedly finding the minimum element and
- * swapping it with the first element.
+ * swapping it with the top element of the sorted array.
  * 
  * Selection sort has a time complexity of O(n^2) and a space complexity
  * of O(1).
@@ -85,5 +85,22 @@ void insertion_sort(void *base, size_t nitems, size_t size, compare_func cmp);
  * @param cmp Comparator function to be used in the sorting algorithm.
  */
 void selection_sort(void *base, size_t nitems, size_t size, compare_func cmp);
+
+/**
+ * @brief Sorts an array using the merge sort algorithm.
+ * 
+ * Exchange sort is a simple sorting algorithm that works by taking
+ * an sorted array and repeatedly exchanging the top element with
+ * the smaller elements of the unsorted array.
+ * 
+ * Exchange sort has a time complexity of O(n^2) and a space complexity
+ * of O(1).
+ * 
+ * @param base Pointer to the first element of the array.
+ * @param nitems Number of elements in the array.
+ * @param size Size of each element in the array.
+ * @param cmp Comparator function to be used in the sorting algorithm.
+ */
+void exchange_sort(void *base, size_t nitems, size_t size, compare_func cmp);
 
 #endif
