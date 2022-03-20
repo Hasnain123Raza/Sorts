@@ -12,5 +12,6 @@ Run `make` to make the project. This should generate the `libsorts.a` file in yo
 
 ## Links
 
-Doxygen: https://hasnain123raza.github.io/Sorts/
+Doxygen: https://hasnain123raza.github.io/Sorts
+
 Github: https://github.com/Hasnain123Raza/Sorts

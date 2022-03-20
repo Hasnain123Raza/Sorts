@@ -2,8 +2,17 @@
 #define SORTS_H
 
 #include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
+
+#define SWAP(a, b, size) \
+    { \
+        size_t __size = (size); \
+        char *__a = (a), *__b = (b); \
+        do { \
+            char __tmp = *__a; \
+            *__a++ = *__b; \
+            *__b++ = __tmp; \
+        } while (--__size > 0); \
+    } 
 
 /**
  * @brief Comparator function type to be used in sorting algorithms.
@@ -33,7 +42,8 @@ typedef void (*sort_func)(void *, size_t, size_t, compare_func);
  * algorithm is named for the way smaller or larger elements "bubble"
  * to the top of the list.
  * 
- * Bubble sort has a complexity of O(n^2) in the worst case.
+ * Bubble sort has a time complexity of O(n^2) and a space complexity
+ * of O(1).
  * 
  * @param base Pointer to the first element of the array.
  * @param nitems Number of elements in the array.

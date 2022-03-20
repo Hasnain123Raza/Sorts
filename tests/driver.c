@@ -31,7 +31,6 @@ int main(int argc, char *argv[]) {
 
     int size = atoi(argv[2]);
     int *arr = malloc(sizeof(int) * size);
-    printf("Generating array...\n");
 
     char *sort_algo = argv[1];
     sort_func sort = NULL;
