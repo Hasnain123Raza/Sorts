@@ -52,4 +52,21 @@ typedef void (*sort_func)(void *, size_t, size_t, compare_func);
  */
 void bubble_sort(void *base, size_t nitems, size_t size, compare_func cmp);
 
+/**
+ * @brief Sorts an array using the insertion sort algorithm.
+ * 
+ * Insertion sort is a simple sorting algorithm that works by taking
+ * an unsorted array and repeatedly inserting each element into the
+ * sorted array.
+ * 
+ * Insertion sort has a time complexity of O(n^2) and a space complexity
+ * of O(1).
+ * 
+ * @param base Pointer to the first element of the array.
+ * @param nitems Number of elements in the array.
+ * @param size Size of each element in the array.
+ * @param cmp Comparator function to be used in the sorting algorithm.
+ */
+void insertion_sort(void *base, size_t nitems, size_t size, compare_func cmp);
+
 #endif

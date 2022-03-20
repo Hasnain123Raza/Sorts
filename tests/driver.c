@@ -36,6 +36,8 @@ int main(int argc, char *argv[]) {
     sort_func sort = NULL;
     if (strcmp(sort_algo, "bubble") == 0) {
         sort = bubble_sort;
+    } else if (strcmp(sort_algo, "insertion") == 0) {
+        sort = insertion_sort;
     } else {
         printf("Unknown sort algorithm: %s\n", sort_algo);
         exit(1);
