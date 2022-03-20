@@ -108,6 +108,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a346d53e37ed100ddd65b12e0f51e9600"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sorts_8h.html#a346d53e37ed100ddd65b12e0f51e9600">insertion_sort</a> (void *base, size_t nitems, size_t size, <a class="el" href="sorts_8h.html#a8be2f8c9e662e46607152c4a62f0d9d6">compare_func</a> cmp)</td></tr>
 <tr class="memdesc:a346d53e37ed100ddd65b12e0f51e9600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts an array using the insertion sort algorithm.  <a href="sorts_8h.html#a346d53e37ed100ddd65b12e0f51e9600">More...</a><br /></td></tr>
 <tr class="separator:a346d53e37ed100ddd65b12e0f51e9600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1cac04d8696d2e1fb11db86b4d7bad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sorts_8h.html#adc1cac04d8696d2e1fb11db86b4d7bad">selection_sort</a> (void *base, size_t nitems, size_t size, <a class="el" href="sorts_8h.html#a8be2f8c9e662e46607152c4a62f0d9d6">compare_func</a> cmp)</td></tr>
+<tr class="memdesc:adc1cac04d8696d2e1fb11db86b4d7bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts an array using the selection sort algorithm.  <a href="sorts_8h.html#adc1cac04d8696d2e1fb11db86b4d7bad">More...</a><br /></td></tr>
+<tr class="separator:adc1cac04d8696d2e1fb11db86b4d7bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a29bc801ab28db7ec3f9cda2e85811c11" name="a29bc801ab28db7ec3f9cda2e85811c11"></a>
@@ -283,6 +286,59 @@ Functions</h2></td></tr>
 <p>Sorts an array using the insertion sort algorithm. </p>
 <p >Insertion sort is a simple sorting algorithm that works by taking an unsorted array and repeatedly inserting each element into the sorted array.</p>
 <p >Insertion sort has a time complexity of O(n^2) and a space complexity of O(1).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>Pointer to the first element of the array. </td></tr>
+    <tr><td class="paramname">nitems</td><td>Number of elements in the array. </td></tr>
+    <tr><td class="paramname">size</td><td>Size of each element in the array. </td></tr>
+    <tr><td class="paramname">cmp</td><td>Comparator function to be used in the sorting algorithm. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc1cac04d8696d2e1fb11db86b4d7bad" name="adc1cac04d8696d2e1fb11db86b4d7bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1cac04d8696d2e1fb11db86b4d7bad">&#9670;&nbsp;</a></span>selection_sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void selection_sort </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nitems</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sorts_8h.html#a8be2f8c9e662e46607152c4a62f0d9d6">compare_func</a>&#160;</td>
+          <td class="paramname"><em>cmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sorts an array using the selection sort algorithm. </p>
+<p >Selection sort is a simple sorting algorithm that works by taking an unsorted array and repeatedly finding the minimum element and swapping it with the first element.</p>
+<p >Selection sort has a time complexity of O(n^2) and a space complexity of O(1).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">base</td><td>Pointer to the first element of the array. </td></tr>
