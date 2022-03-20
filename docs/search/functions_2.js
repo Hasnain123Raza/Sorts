@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['selection_5fsort_0',['selection_sort',['../sorts_8h.html#adc1cac04d8696d2e1fb11db86b4d7bad',1,'sorts.h']]]
+  ['insertion_5fsort_0',['insertion_sort',['../sorts_8h.html#a346d53e37ed100ddd65b12e0f51e9600',1,'sorts.h']]]
 ];
